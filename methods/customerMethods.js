@@ -31,9 +31,9 @@ function addingSubscriptionToCustomer(payload) {
       for (let j = 0; j < ActyvPro[i].contacts.length; j++)
         if (ActyvPro[i].contacts[j].customerName === customer.customerName) {
           ActyvPro[i].contacts[j].subscriptions.push(newSubscription);
+          return "Subscription Added";
         }
     }
-  return "Subscription Added";
 }
 
 module.exports.addingCustomerToVendor = addingCustomerToVendor;
