@@ -11,4 +11,4 @@ export default class ProductModels {
       this.subTotal = payload.subTotal
       this.discount = payload.discount
   }
-} 
+}

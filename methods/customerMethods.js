@@ -8,11 +8,11 @@ module.exports.addCustomer = (payload) =>{
    for(let i = 0; i <ActyvPro.length ;i++ )
       if(ActyvPro[i].phone === phone) {
          ActyvPro[i].contacts.push(newCustomer)
+         return "Contact added"
       }
-   return "Contact added"
 }
 
-module.exports.addSubscription = (payload) =>{
+nckmodule.exports.addSubscription = (payload) =>{
    let { phone, customer, subscription } = payload
    newSubscription = new Subscription(payload)
    for(let i = 0; i <ActyvPro.length ;i++ )
@@ -20,16 +20,7 @@ module.exports.addSubscription = (payload) =>{
          for(let j = 0 ; j < ActyvPro[i].contacts.length ;j++)
             if(ActyvPro[i].contacts[j].name === customer.name){
                ActyvPro[i].contacts[j].subscriptions.push(newSubscription)
+               return "Subscription Added"
             }
       }
-   return "Subscription Added"
 }
-
-
-
- addCustomer({
-  customerId: "101",
-  customerName: "SampleUser",
-  customerAddress: "ABCDEFGHI",
-  subscriptions: 
- })
