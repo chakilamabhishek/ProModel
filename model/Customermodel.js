@@ -1,4 +1,4 @@
-export default class Customer {
+class Customer {
   constructor(payload) {
       this.customerId = payload.customerId
       this.customerName = payload.customerName
@@ -30,3 +30,5 @@ export default class Customer {
       this.subscriptions = payload
   }
 }
+
+module.exports.Customer=Customer

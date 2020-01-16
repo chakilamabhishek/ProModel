@@ -1,4 +1,4 @@
-export default class Product{
+class Product{
   constructor(payload){
       this.productId = payload.productId
       this.name = payload.name
@@ -9,3 +9,4 @@ export default class Product{
   }
 }
 
+module.exports.Product=Product

@@ -5,3 +5,7 @@ class Business{
     this.inventory=payload.inventory
   }
 }
+
+
+
+module.exports.Business=Business

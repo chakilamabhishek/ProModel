@@ -1,10 +1,10 @@
-export default class Subscription{
+class Subscription{
   constructor(payload){
       this.subscribeId = payload.subscribeId
       this.subscribeFrom = payload.subscribeFrom
       this.subscribeTo = payload.subscribeTo
       this.vacations = payload.vacations
-      this.itemId = payload.itemId
+      this.ProductId = payload.ProductId
       this.subscribedOnWeekend = payload.subscribedOnWeekend
   }
   get _subscribeId(){
@@ -44,3 +44,6 @@ export default class Subscription{
       this.subscribedOnWeekend = payload
   }
 }
+
+
+module.exports.Subscription=Subscription
