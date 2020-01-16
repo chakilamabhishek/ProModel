@@ -1,9 +1,20 @@
-const {Vendor,ActyvPro,test} = require("../model/vendormodel")
+/**
+ * @module vendorMethods
+ */
 
-function Createvendor(payload) {
-  milkvendor=new Vendor(payload)
+/**
+ * @function
+ * @name registerVendor
+ * @description To register Vendor
+ * @param {object} vendor Vendor details to be added
+ * @returns {number} Changed Size of Number of Vendor's
+ * 
+ */
+module.exports.registerVendor = (vendor) => {
+  newVendor = new Vendor(vendor)
+  let numberOfVendors = ActyvPro.length
   ActyvPro.push(milkvendor)
-  return "addedcustomer"
+  return ActyvPro.length - numberOfVendors
 }
 
 
