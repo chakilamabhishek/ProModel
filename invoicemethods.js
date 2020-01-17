@@ -42,8 +42,3 @@ function calculateInvoice(subscriptioninfo, productinfo) {
   }
   return amount;
 }
-
-
-function generateinvoice(){
-  
-}
