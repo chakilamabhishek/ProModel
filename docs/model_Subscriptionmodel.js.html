@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: model/Subscriptionmodel.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,55 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: model/Subscriptionmodel.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Class representing Customer
+ */
+class Subscription {
+  /**
+   * Creates a Subscription.
+   * @param {object} payload Object containing Initial values
+   */
+  constructor(payload) {
+     /**
+     * @type {number}
+     */
+    this.subscribeId = payload.subscribeId;
+     /**
+     * @type {Date}
+     */
+    this.subscribeFrom = payload.subscribeFrom;
+     /**
+     * @type {Date}
+     */
+    this.subscribeTo = payload.subscribeTo;
+     /**
+     * @type {Array}
+     */
+    this.vacations = payload.vacations;
+     /**
+     * @type {number}
+     */
+    this.ProductId = payload.ProductId;
+     /**
+     * @type {boolean}
+     */
+    this.subscribedOnWeekend = payload.subscribedOnWeekend;
+  }
+}
 
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+module.exports.Subscription = Subscription;
+</code></pre>
+        </article>
+    </section>
 
 
 

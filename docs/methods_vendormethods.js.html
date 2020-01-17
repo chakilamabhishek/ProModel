@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: methods/vendormethods.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,40 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: methods/vendormethods.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const { Vendor } = require("../model/vendormodel");
+/**
+ * @module vendorMethods
+ */
 
+/**
+ * @function
+ * @name registerVendor
+ * @description To register Vendor
+ * @param {object} vendor Vendor details to be added
+ * @returns {number} Change in Size of Number of Vendor's
+ *
+ */
 
-    <h3> </h3>
+function registerVendor(vendor) {
+  newVendor = new Vendor(vendor);
+  let numberOfVendors = ActyvPro.length;
+  ActyvPro.push(newVendor);
+  return ActyvPro.length - numberOfVendors;
+}
 
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+module.exports.registerVendor = registerVendor;
+</code></pre>
+        </article>
+    </section>
 
 
 
