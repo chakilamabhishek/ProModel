@@ -1,12 +1,9 @@
 const { registerVendor } = require("../methods/vendormethods");
 const { addingProductToInventory } = require("../methods/productmethods");
 const { addBusinessType } = require("../methods/businessmethods");
-const { ActyvPro } = require("../model/vendormodel");
 const { newpayload } = require("../sampedata");
 const { calculateInvoice } = require("../methods/invoicemethods");
-const {addCustomer,addSubscription}=require("../methods/customerMethods")
-
-
+const { addCustomer, addSubscription } = require("../methods/customerMethods");
 
 const should = require("chai").should();
 before(done => {
@@ -229,7 +226,6 @@ describe("Invoice ", function() {
   });
 });
 
-
 /**
  * @function
  * @inner
@@ -239,19 +235,17 @@ describe("Invoice ", function() {
 describe("Contact ", function() {
   it("should create a instance of Product. returns change in size of Inventory of Vendor", function() {
     let Customerinfo = {
-      customerId:"1023",
-    customerName:"Acabhishek",
-    customerAddress:"Hyderabad",
-    subscriptions:[],
+      customerId: "1023",
+      customerName: "Acabhishek",
+      customerAddress: "Hyderabad",
+      subscriptions: []
     };
-    let vendorPhone="+919876543210"
-    no_of_Customers_added = addCustomer(vendorPhone,Customerinfo);
+    let vendorPhone = "+919876543210";
+    no_of_Customers_added = addCustomer(vendorPhone, Customerinfo);
     no_of_Customers_added[0].should.be.a("number");
     no_of_Customers_added[0].should.equal(1);
   });
 });
-
-
 
 /**
  * @function
@@ -261,19 +255,21 @@ describe("Contact ", function() {
  */
 describe("Subscription ", function() {
   it("should create a instance of Product. returns change in size of Inventory of Vendor", function() {
-    let subscriptoninfo={
+    let subscriptoninfo = {
       subscribeId: "1023",
       subscribeFrom: "Thu Jan 1 2020 05:30:30 GMT+0530 (India Standard Time)",
       subscribeTo: "Thu Jan 31 2020 05:30:30 GMT+0530 (India Standard Time)",
-      vacations: [
-        "Thu Jan 29 2020 05:30:30 GMT+0530 (India Standard Time)"
-      ],
+      vacations: ["Thu Jan 29 2020 05:30:30 GMT+0530 (India Standard Time)"],
       subscribedOnWeekend: true,
       productId: "1001"
-    }
-    let customerName="Acabhishek"
-    let vendorPhone="+919876543210"
-    no_of_subscriptons_added=addSubscription(vendorPhone,customerName,subscriptoninfo)
+    };
+    let customerName = "Acabhishek";
+    let vendorPhone = "+919876543210";
+    no_of_subscriptons_added = addSubscription(
+      vendorPhone,
+      customerName,
+      subscriptoninfo
+    );
     no_of_subscriptons_added[0].should.be.a("number");
     no_of_subscriptons_added[0].should.equal(1);
   });
