@@ -6,7 +6,7 @@
  * @returns
  */
 function getprice(day, productinfo) {
-  return productinfo.ProductModel[day].price;
+  return productinfo.ProductModels[day].price;
 }
 /**
  *
@@ -30,15 +30,18 @@ function checkOnVacation(subscriptioninfo, index) {
  */
 function calculateInvoice(subscriptioninfo, productinfo) {
   let amount = 0;
-  let enddate = new Date(subscriptioninfo.subscribeTo);
   let index = new Date(subscriptioninfo.subscribeFrom);
+  let enddate = new Date(subscriptioninfo.subscribeTo);
   for (index; index <= enddate; ) {
     if (!checkOnVacation(subscriptioninfo, index)) {
-      if (subscriptioninfo.subscribedOnWeekend || !(index.getDay() == 0 || index.getDay() == 6)) {
-        amount = +amount + (+getprice(index.getDay(), productinfo));
+      if ( subscriptioninfo.subscribedOnWeekend || !(index.getDay() == 0 || index.getDay() == 6)) {
+        amount = +amount + +getprice(index.getDay(), productinfo);
       }
     }
     index.setDate(index.getDate() + 1);
   }
   return amount;
 }
+
+
+module.exports.calculateInvoice=calculateInvoice
