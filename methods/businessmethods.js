@@ -2,7 +2,8 @@
  * @module businessMethods
  */
 const { ActyvPro } = require("../model/vendormodel");
-const { BusinessTypes } = require('../model/Businessmodel')
+const { BusinesstTypes } = require('../model/Businessmodel')
+const {registerVendor}=require('./vendormethods')
 
 /**
  * @function
@@ -13,9 +14,9 @@ const { BusinessTypes } = require('../model/Businessmodel')
  * @returns {number} Changed Size of User's BusinessTypes
  * 
  */
-module.exports.addBusinessType = ( phone, businessType ) => {
-  newBusinessType = new BusinessTypes(businessType);
-  ActyvPro.map((user) => {
+module.exports.addBusinessType = ( {phone, businessType })=>  {
+  newBusinessType = new BusinesstTypes(businessType);
+  return ActyvPro.map((user) => {
      if(user.phone === phone ){
       let oldBusinessTypesSize = user.BusinessTypes.length
       user.BusinessTypes.push(newBusinessType)

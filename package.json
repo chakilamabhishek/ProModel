@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/chakilamabhishek/ProModel#readme",
   "dependencies": {
-    "jsdoc": "^3.6.3"
+    "chai": "^4.2.0",
+    "jsdoc": "^3.6.3",
+    "mocha": "^7.0.0",
+    "sinon": "^8.1.0"
   }
 }

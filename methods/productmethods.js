@@ -13,7 +13,7 @@ const { ActyvPro } = require("../model/vendormodel");
 *@param {number} phone User's Phone Number
 *@param {object} businesstypes User's Business details
 *@param {object} product Product Details to be added
-*@returns {number} Changed Size of Inventory
+*@returns {number} Change in  Size of Inventory
 * 
 */
 module.exports.addingProductToInventory = (phone, businesstypes, product) => {

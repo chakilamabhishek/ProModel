@@ -20,4 +20,4 @@ class BusinesstTypes {
   }
 }
 
-module.exports.Business = Business;
+module.exports.BusinesstTypes = BusinesstTypes;

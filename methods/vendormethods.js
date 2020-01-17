@@ -1,3 +1,4 @@
+const { Vendor } = require("../model/vendormodel");
 /**
  * @module vendorMethods
  */
@@ -7,15 +8,15 @@
  * @name registerVendor
  * @description To register Vendor
  * @param {object} vendor Vendor details to be added
- * @returns {number} Changed Size of Number of Vendor's
- * 
+ * @returns {number} Change in Size of Number of Vendor's
+ *
  */
-module.exports.registerVendor = (vendor) => {
-  newVendor = new Vendor(vendor)
-  let numberOfVendors = ActyvPro.length
-  ActyvPro.push(milkvendor)
-  return ActyvPro.length - numberOfVendors
+
+function registerVendor(vendor) {
+  newVendor = new Vendor(vendor);
+  let numberOfVendors = ActyvPro.length;
+  ActyvPro.push(newVendor);
+  return ActyvPro.length - numberOfVendors;
 }
 
-
-module.exports.Createvendor=Createvendor
+module.exports.registerVendor = registerVendor;

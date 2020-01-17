@@ -8,7 +8,7 @@
  * @export
  * @class Customer
  */
-export default class Customer {
+class Customer {
   /**
    *Creates an instance of Customer.
    * @param {*} payload
@@ -45,3 +45,5 @@ export default class Customer {
     this.subscriptions = payload;
   }
 }
+
+module.exports.Customer = Customer;
