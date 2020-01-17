@@ -84,13 +84,15 @@ describe("Adding product to Inventory of Vendor", function() {
       { model: "Friday", price: "6" },
       { model: "Saturday", price: "6" }
     ];
-    no_of_Products_added=addingProductToInventory(phone, businessPayload, productPayload);//change in no of products
+    no_of_Products_added = addingProductToInventory(
+      phone,
+      businessPayload,
+      productPayload
+    ); //change in no of products
     no_of_Products_added[0].should.be.a("number");
     no_of_Products_added[0].should.equal(1);
   });
 });
-
-
 
 /**
  * @function
@@ -107,7 +109,7 @@ describe("Adding addingProductModelToProduct", function() {
       inventory: []
     };
     let productPayload = [
-      { model: "Sunday", price: "6" },
+      { model: "Sunday",price: "6"},
       { model: "Monday", price: "6" },
       { model: "Tuesday", price: "6" },
       { model: "Wednesday", price: "6" },
@@ -115,7 +117,11 @@ describe("Adding addingProductModelToProduct", function() {
       { model: "Friday", price: "6" },
       { model: "Saturday", price: "6" }
     ];
-    no_of_Products_added=addingProductToInventory(phone, businessPayload, productPayload);//change in no of products
+    no_of_Products_added = addingProductToInventory(
+      phone,
+      businessPayload,
+      productPayload
+    );
     no_of_Products_added[0].should.be.a("number");
     no_of_Products_added[0].should.equal(1);
   });

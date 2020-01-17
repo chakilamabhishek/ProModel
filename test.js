@@ -100,6 +100,7 @@ const model = [
     }
     return amount;
   }
+  
 
 
   function mainUser(){
