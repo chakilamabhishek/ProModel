@@ -1,20 +1,19 @@
 /**
- * @module productmodels-model
- */
-
-/**
- *
- *
- * @class ProductModels
+ * Class representing ProductModels
  */
 class ProductModels {
   /**
-   *Creates an instance of ProductModels.
-   * @param {*} payload
-   * @memberof ProductModels
+   * Creates a ProductModels.
+   * @param {object} payload Object containing Initial values
    */
   constructor(payload) {
+     /**
+     * @type {string}
+     */
     this.model = payload.model;
+     /**
+     * @type {number}
+     */
     this.price = payload.price;
     // this.features = payload.features
     // this.description = payload.description
@@ -24,6 +23,22 @@ class ProductModels {
     // this.gstAmount = payload.gstAmount;
     // this.subTotal = payload.subTotal;
     // this.discount = payload.discount;
+     /**
+     * @type {number}
+     */
+    this.gst = payload.gst;
+     /**
+     * @type {number}
+     */
+    this.gstAmount = payload.gstAmount;
+     /**
+     * @type {number}
+     */
+    this.subTotal = payload.subTotal;
+     /**
+     * @type {number}
+     */
+    this.discount = payload.discount;
   }
 }
 

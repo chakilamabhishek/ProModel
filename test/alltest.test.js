@@ -89,3 +89,34 @@ describe("Adding product to Inventory of Vendor", function() {
     no_of_Products_added[0].should.equal(1);
   });
 });
+
+
+
+/**
+ * @function
+ * @inner
+ * @param {string} description - string explaining what test should do
+ * @param {callback} middleware - function with done as a param
+ */
+describe("Adding addingProductModelToProduct", function() {
+  it("should create a instance of Product. returns change in size of Inventory of Vendor.", function() {
+    let phone = "+918897626060";
+    let businessPayload = {
+      name: "News paper",
+      businessId: "News32",
+      inventory: []
+    };
+    let productPayload = [
+      { model: "Sunday", price: "6" },
+      { model: "Monday", price: "6" },
+      { model: "Tuesday", price: "6" },
+      { model: "Wednesday", price: "6" },
+      { model: "Thursday", price: "6" },
+      { model: "Friday", price: "6" },
+      { model: "Saturday", price: "6" }
+    ];
+    no_of_Products_added=addingProductToInventory(phone, businessPayload, productPayload);//change in no of products
+    no_of_Products_added[0].should.be.a("number");
+    no_of_Products_added[0].should.equal(1);
+  });
+});

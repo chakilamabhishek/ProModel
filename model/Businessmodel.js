@@ -1,21 +1,25 @@
-/**
- * @module Businessmodel
- */
 
 /**
- *
- *
- * @class BusinesstTypes
+ * Class representing BusinessTypes
  */
 class BusinesstTypes {
   /**
-   *Creates an instance of BusinesstTypes.
-   * @param {*} payload
-   * @memberof BusinesstTypes
+   * Create a BusinesstType.
+   * @param {object} payload Object containing Initial values
+   * 
    */
   constructor(payload) {
+    /**
+     * @type {string}
+     */
     this.name = payload.name;
+    /**
+     * @type {number}
+     */
     this.businessId = payload.businessId;
+    /**
+     * @type {Array}
+     */
     this.inventory = payload.inventory;
   }
 }

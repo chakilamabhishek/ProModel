@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: methods/businessmethods.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,45 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: methods/businessmethods.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module businessMethods
+ */
+const { ActyvPro } = require("../model/vendormodel");
+const { BusinesstTypes } = require('../model/Businessmodel')
+const {registerVendor}=require('./vendormethods')
 
+/**
+ * @function
+ * @name addBusinessType
+ * @description To add Business Type to the Vendor
+ * @param {number} phone User's Phone Number
+ * @param {object} businessType BusinessType details to be added
+ * @returns {number} Changed Size of User's BusinessTypes
+ * 
+ */
+module.exports.addBusinessType = ( {phone, businessType })=>  {
+  newBusinessType = new BusinesstTypes(businessType);
+  return ActyvPro.map((user) => {
+     if(user.phone === phone ){
+      let oldBusinessTypesSize = user.BusinessTypes.length
+      user.BusinessTypes.push(newBusinessType)
+      return user.BusinessTypes.length - oldBusinessTypesSize
+     }
+  })
+}
 
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+</code></pre>
+        </article>
+    </section>
 
 
 

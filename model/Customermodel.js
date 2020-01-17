@@ -1,48 +1,28 @@
 /**
- * @module Customermodel
- */
-
-/**
- *
- *
- * @export
- * @class Customer
+ * Class representing Customer
  */
 class Customer {
   /**
-   *Creates an instance of Customer.
-   * @param {*} payload
-   * @memberof Customer
+   * Creates a Customer.
+   * @param {object} payload Object containing Initial values
    */
   constructor(payload) {
+    /**
+     * @type {number}
+     */
     this.customerId = payload.customerId;
+    /**
+     * @type {string}
+     */
     this.customerName = payload.customerName;
+    /**
+     * @type {string}
+     */
     this.customerAddress = payload.customerAddress;
+    /**
+     * @type {Array}
+     */
     this.subscriptions = payload.subscriptions;
-  }
-  get _customerId() {
-    return this.customerId;
-  }
-  get _customerName() {
-    return this.customerName;
-  }
-  get _customerAddress() {
-    return this.customerAddress;
-  }
-  get _subsriptions() {
-    return this.subscriptions;
-  }
-  set _customerId(payload) {
-    this.customerId = payload;
-  }
-  set _customerName(payload) {
-    this.customerName = payload;
-  }
-  set _customerAddress(payload) {
-    this.customerAddress = payload;
-  }
-  set _subsriptions(payload) {
-    this.subscriptions = payload;
   }
 }
 
