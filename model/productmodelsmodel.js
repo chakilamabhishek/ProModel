@@ -15,22 +15,22 @@ class ProductModels {
      * @type {number}
      */
     this.price = payload.price;
-     /**
-     * @type {number}
-     */
-    this.gst = payload.gst;
-     /**
-     * @type {number}
-     */
-    this.gstAmount = payload.gstAmount;
-     /**
-     * @type {number}
-     */
-    this.subTotal = payload.subTotal;
-     /**
-     * @type {number}
-     */
-    this.discount = payload.discount;
+    //  /**
+    //  * @type {number}
+    //  */
+    // this.gst = payload.gst;
+    //  /**
+    //  * @type {number}
+    //  */
+    // this.gstAmount = payload.gstAmount;
+    //  /**
+    //  * @type {number}
+    //  */
+    // this.subTotal = payload.subTotal;
+    //  /**
+    //  * @type {number}
+    //  */
+    // this.discount = payload.discount;
   }
 }
 
