@@ -1,5 +1,5 @@
 const { registerVendor } = require("../methods/vendormethods");
-const { addingProductToInventory } = require("../methods/productmethods");
+const { addingProductToInventory, addingProductModelToProduct } = require("../methods/productmethods");
 const { addBusinessType } = require("../methods/businessmethods");
 const { newpayload } = require("../sampedata");
 const { calculateInvoice } = require("../methods/invoicemethods");
@@ -80,20 +80,51 @@ describe("Adding product to Inventory of Vendor", function() {
       businessId: "News32",
       inventory: []
     };
-    let productPayload = [
-      { model: "Sunday", price: "6" },
-      { model: "Monday", price: "6" },
-      { model: "Tuesday", price: "6" },
-      { model: "Wednesday", price: "6" },
-      { model: "Thursday", price: "6" },
-      { model: "Friday", price: "6" },
-      { model: "Saturday", price: "6" }
-    ];
+    let productPayload = {
+      productId:"101",
+      name:"Hindu",
+      description:"This is Hindu Paper",
+      units:"units",
+      ProductModels : [
+        { model: "Sunday", price: "6" },
+        { model: "Monday", price: "6" },
+        { model: "Tuesday", price: "6" },
+        { model: "Wednesday", price: "6" },
+        { model: "Thursday", price: "6" },
+        { model: "Friday", price: "6" },
+        { model: "Saturday", price: "6" }
+      ],
+      customer: []
+    };
     no_of_Products_added = addingProductToInventory(
       phone,
       businessPayload,
       productPayload
-    ); //change in no of products
+    ); 
+    no_of_Products_added[0].should.be.a("number");
+    no_of_Products_added[0].should.equal(1);
+  });
+});
+
+/**
+ * @function
+ * @inner
+ * @param {string} description - string explaining what test should do
+ * @param {callback} middleware - function with done as a param
+ */
+describe("Adding productModel to Product of Vendor's Inventory", function() {
+  it("should create a instance of ProductModel. returns change in size of ProductModels in PRODUCT of Vendor's Inventory.", function() {
+    let phone = "+919876543210";
+    let businessname= "News paper";
+    let  productname="Hindu";
+    let productModelPayload = 
+      { model: "Saturday", price: "6" }
+    no_of_Products_added = addingProductModelToProduct(
+      phone,
+      businessname,
+      productname,
+      productModelPayload
+    );
     no_of_Products_added[0].should.be.a("number");
     no_of_Products_added[0].should.equal(1);
   });
@@ -139,15 +170,7 @@ describe("Invoice ", function() {
     amount.should.be.a("number");
     amount.should.equal(202);
   });
-});
 
-/**
- * @function
- * @inner
- * @param {string} description - string explaining what test should do
- * @param {callback} middleware - function with done as a param
- */
-describe("Invoice ", function() {
   it("it should calculate the invoice amount", function() {
     let subscriptioninfo = {
       subscribeId: "10001",
@@ -168,15 +191,7 @@ describe("Invoice ", function() {
     amount.should.be.a("number");
     amount.should.equal(120);
   });
-});
 
-/**
- * @function
- * @inner
- * @param {string} description - string explaining what test should do
- * @param {callback} middleware - function with done as a param
- */
-describe("Invoice ", function() {
   it("it should calculate the invoice amount", function() {
     let subscriptioninfo = {
       subscribeId: "10001",
@@ -274,3 +289,5 @@ describe("Subscription ", function() {
     no_of_subscriptons_added[0].should.equal(1);
   });
 });
+
+

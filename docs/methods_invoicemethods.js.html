@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: methods/customerMethods.js</title>
+    <title>JSDoc: Source: methods/invoicemethods.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: methods/customerMethods.js</h1>
+    <h1 class="page-title">Source: methods/invoicemethods.js</h1>
 
     
 
@@ -27,56 +27,61 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @module customerMethods
+ * @module invoiceMethods
  */
-
-const { Customer } = require("../model/Customermodel");
-const { Subscription } = require("../model/Subscriptionmodel");
-const { ActyvPro } = require("../model/vendormodel");
-
-/**
+ /**
  *@function
- *@name addCustomer
- *@description To add Customer to the Vendor
- *@param {number} phone User's Phone Number
- *@param {object} customer Customer details to be added
- *@returns {number} Changed Size of User's Contacts
+ *@name getprice
+ *@description To check Price of the Product
+ *@param {object} day Day of week
+ *@param {number} productinfo product Details
+ *@returns {number} Price of the required product 
  * 
  */
-module.exports.addCustomer = ( phone, customer ) => {
-  newCustomer = new Customer(customer);
-  return ActyvPro.map((user) => {
-     if(user.phone === phone ){
-      let oldContactsSize = user.contacts.length
-      user.contacts.push(newCustomer)
-      return user.contacts.length - oldContactsSize
-     }
-  })
+function getprice(day, productinfo) {
+  return productinfo.ProductModels[day].price;
 }
-
 /**
  *@function
- *@name addSubscription
- *@description To add Subsription details to the Customer about Product
- *@param {number} phone User's Phone Number
- *@param {object} customer Customer details
- *@param {object} subscription Subscription details to be added
- * @returns {number} Changed Size of customer's Subscription
+ *@name checkOnVacation
+ *@description To check Vendor is on vacation or not
+ *@param {object} subscriptioninfo Subscription Details
+ *@param {number} index Check Date for vacation
+ *@returns {boolean} True or false for vacation Status
  * 
  */
-module.exports.addSubscription = (phone, customerName, subscription) => {
-  newSubscription = new Subscription(subscription);
-  return ActyvPro.map(user => {
-    if (user.phone === phone)
-    { 
-      if ((j = user.contacts.findIndex(contact => contact.customerName === customerName))>=0) {
-        let oldSubscriptionSize = user.contacts[j].subscriptions.length;
-        user.contacts[j].subscriptions.push(newSubscription);
-        return user.contacts[j].subscriptions.length - oldSubscriptionSize;
+function checkOnVacation(subscriptioninfo, index) {
+  return !!subscriptioninfo.vacations.find(date => {
+    date = new Date(date);
+    return date.getTime() === index.getTime();
+  });
+}
+/**
+ *@function
+ *@name calculateInvoice
+ *@description To calculate invoice of customer subscription
+ *@param {object} subscriptioninfo Subscription Details
+ *@param {object} productinfo Product Details
+ *@returns {number} Amount of INVOICE generated
+ * 
+ */
+function calculateInvoice(subscriptioninfo, productinfo) {
+  let amount = 0;
+  let index = new Date(subscriptioninfo.subscribeFrom);
+  let enddate = new Date(subscriptioninfo.subscribeTo);
+  for (index; index &lt;= enddate; ) {
+    if (!checkOnVacation(subscriptioninfo, index)) {
+      if ( subscriptioninfo.subscribedOnWeekend || !(index.getDay() == 0 || index.getDay() == 6)) {
+        amount = +amount + +getprice(index.getDay(), productinfo);
       }
     }
-  });
-};
+    index.setDate(index.getDate() + 1);
+  }
+  return amount;
+}
+
+
+module.exports.calculateInvoice=calculateInvoice
 </code></pre>
         </article>
     </section>

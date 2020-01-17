@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: customerMethods</title>
+    <title>JSDoc: Module: invoiceMethods</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: customerMethods</h1>
+    <h1 class="page-title">Module: invoiceMethods</h1>
 
     
 
@@ -64,7 +64,7 @@
     
 
     
-    <h4 class="name" id="~addCustomer"><span class="type-signature">(inner) </span>addCustomer<span class="signature">(phone, customer)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    <h4 class="name" id="~calculateInvoice"><span class="type-signature">(inner) </span>calculateInvoice<span class="signature">(subscriptioninfo, productinfo)</span><span class="type-signature"> &rarr; {number}</span></h4>
     
 
     
@@ -72,7 +72,7 @@
 
 
 <div class="description">
-    To add Customer to the Vendor
+    To calculate invoice of customer subscription
 </div>
 
 
@@ -108,30 +108,7 @@
 
         <tr>
             
-                <td class="name"><code>phone</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">User's Phone Number</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>customer</code></td>
+                <td class="name"><code>subscriptioninfo</code></td>
             
 
             <td class="type">
@@ -147,7 +124,30 @@
 
             
 
-            <td class="description last">Customer details to be added</td>
+            <td class="description last">Subscription Details</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>productinfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Product Details</td>
         </tr>
 
     
@@ -188,7 +188,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="methods_customerMethods.js.html">methods/customerMethods.js</a>, <a href="methods_customerMethods.js.html#line9">line 9</a>
+        <a href="methods_invoicemethods.js.html">methods/invoicemethods.js</a>, <a href="methods_invoicemethods.js.html#line31">line 31</a>
     </li></ul></dd>
     
 
@@ -217,7 +217,7 @@
 
         
 <div class="param-desc">
-    Changed Size of User's Contacts
+    Amount of INVOICE generated
 </div>
 
 
@@ -246,7 +246,7 @@
     
 
     
-    <h4 class="name" id="~addSubscription"><span class="type-signature">(inner) </span>addSubscription<span class="signature">(phone, customer, subscription)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    <h4 class="name" id="~checkOnVacation"><span class="type-signature">(inner) </span>checkOnVacation<span class="signature">(subscriptioninfo, index)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -254,7 +254,7 @@
 
 
 <div class="description">
-    To add Subsription details to the Customer about Product
+    To check Vendor is on vacation or not
 </div>
 
 
@@ -290,7 +290,30 @@
 
         <tr>
             
-                <td class="name"><code>phone</code></td>
+                <td class="name"><code>subscriptioninfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Subscription Details</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>index</code></td>
             
 
             <td class="type">
@@ -306,53 +329,7 @@
 
             
 
-            <td class="description last">User's Phone Number</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>customer</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Customer details</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>subscription</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Subscription details to be added</td>
+            <td class="description last">Check Date for vacation</td>
         </tr>
 
     
@@ -393,7 +370,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="methods_customerMethods.js.html">methods/customerMethods.js</a>, <a href="methods_customerMethods.js.html#line29">line 29</a>
+        <a href="methods_invoicemethods.js.html">methods/invoicemethods.js</a>, <a href="methods_invoicemethods.js.html#line16">line 16</a>
     </li></ul></dd>
     
 
@@ -422,7 +399,189 @@
 
         
 <div class="param-desc">
-    Changed Size of customer's Subscription
+    True or false for vacation Status
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~getprice"><span class="type-signature">(inner) </span>getprice<span class="signature">(day, productinfo)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    To check Price of the Product
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>day</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Day of week</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>productinfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">product Details</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="methods_invoicemethods.js.html">methods/invoicemethods.js</a>, <a href="methods_invoicemethods.js.html#line4">line 4</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Price of the required product
 </div>
 
 

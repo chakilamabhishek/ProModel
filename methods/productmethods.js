@@ -3,7 +3,7 @@
  */
 
 const { Product } = require('../model/Productmodel')
-const { ProductModel } = require('../model/productmodelsmodel')
+const { ProductModels } = require('../model/productmodelsmodel')
 const { ActyvPro } = require("../model/vendormodel");
 
 /**
@@ -40,15 +40,15 @@ module.exports.addingProductToInventory = (phone, businesstype, product) => {
 *@returns {number} Changed Size of ProductModel's
 * 
 */
-module.exports.addingProductModelToProduct = (phone, BusinessTypes, product, productModel) => {
-   newProductModel = new ProductModel(productModel);
-   ActyvPro.map((user) => {
+module.exports.addingProductModelToProduct = (phone, Businessname, productname, productModel) => {
+   newProductModel = new ProductModels(productModel);
+   return ActyvPro.map((user) => {
       if(user.phone === phone )
-         if (j = user.BusinessTypes.findIndex(business => business.name === BusinessTypes.name))
-            if(k = user.BusinessTypes[j].inventory.findIndex(existingProduct => existingProduct.name === product.name)){
-               let oldProductModelSize = user.BusinessTypes[j].inventory[k].productModels.length;
-               ActyvPro[i].BusinessTypes[j].inventory[k].productModels.push(newProductModel)
-               return user.BusinessTypes[j].inventory[k].productModels.length - oldProductModelSize 
+         if ((j = user.BusinessTypes.findIndex(business => business.name === Businessname))>=0)
+            if((k = user.BusinessTypes[j].inventory.findIndex(existingProduct => existingProduct.name === productname))>=0){
+               let oldProductModelSize = user.BusinessTypes[j].inventory[k].ProductModels.length;
+              user.BusinessTypes[j].inventory[k].ProductModels.push(newProductModel)
+               return user.BusinessTypes[j].inventory[k].ProductModels.length - oldProductModelSize 
             }
       })
 }
