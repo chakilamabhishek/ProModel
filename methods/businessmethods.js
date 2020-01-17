@@ -3,7 +3,6 @@
  */
 const { ActyvPro } = require("../model/vendormodel");
 const { BusinesstTypes } = require('../model/Businessmodel')
-const {registerVendor}=require('./vendormethods')
 
 /**
  * @function

@@ -31,13 +31,13 @@ const newpayload = {
         description:"",
         units:"units",
         ProductModels:[
-          { model: "Sunday", price: "6" },
+          { model: "Sunday", price: "8" },
           { model: "Monday", price: "6" },
           { model: "Tuesday", price: "6" },
           { model: "Wednesday", price: "6" },
           { model: "Thursday", price: "6" },
           { model: "Friday", price: "6" },
-          { model: "Saturday", price: "6" }
+          { model: "Saturday", price: "8" }
         ],
         customers:[
           {

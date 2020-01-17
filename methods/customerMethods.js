@@ -2,8 +2,8 @@
  * @module customerMethods
  */
 
-const Customer = require("../models/customerModel");
-const Subscription = require("../");
+const { Customer } = require("../model/Customermodel");
+const { Subscription } = require("../model/Subscriptionmodel");
 const { ActyvPro } = require("../model/vendormodel");
 
 /**
@@ -17,7 +17,7 @@ const { ActyvPro } = require("../model/vendormodel");
  */
 module.exports.addCustomer = ( phone, customer ) => {
   newCustomer = new Customer(customer);
-  ActyvPro.map((user) => {
+  return ActyvPro.map((user) => {
      if(user.phone === phone ){
       let oldContactsSize = user.contacts.length
       user.contacts.push(newCustomer)
@@ -36,14 +36,16 @@ module.exports.addCustomer = ( phone, customer ) => {
  * @returns {number} Changed Size of customer's Subscription
  * 
  */
-module.exports.addSubscription = (phone, customer, subscription) => {
+module.exports.addSubscription = (phone, customerName, subscription) => {
   newSubscription = new Subscription(subscription);
-  Actyvpro.map(user => {
+  return ActyvPro.map(user => {
     if (user.phone === phone)
-      if (j = user.contacts.findIndex(contact => contact.name === customer.name)) {
+    { 
+      if ((j = user.contacts.findIndex(contact => contact.customerName === customerName))>=0) {
         let oldSubscriptionSize = user.contacts[j].subscriptions.length;
         user.contacts[j].subscriptions.push(newSubscription);
         return user.contacts[j].subscriptions.length - oldSubscriptionSize;
       }
+    }
   });
 };
