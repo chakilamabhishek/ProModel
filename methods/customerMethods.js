@@ -1,12 +1,7 @@
 const { Customer } = require("../model/Customermodel");
 const { Subscription } = require("../model/Subscriptionmodel");
 const { ActyvPro } = require("../model/vendormodel");
-/**
- *
- *
- * @param {*} payload
- * @returns
- */
+
 function addingCustomerToVendor(payload) {
   let { phone, customer } = payload;
   newCustomer = new Customer(customer);
@@ -17,12 +12,7 @@ function addingCustomerToVendor(payload) {
   return "Contact added";
 }
 
-/**
- *
- *
- * @param {*} payload
- * @returns
- */
+
 function addingSubscriptionToCustomer(payload) {
   let { phone, customer, subscription } = payload;
   newSubscription = new Subscription(payload);

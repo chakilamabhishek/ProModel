@@ -3,15 +3,14 @@ const {Vendor,ActyvPro,test} = require("../model/vendormodel")
 
 /**
  *
- *@function
- * @param {*} payload
+ *
+ * @param {*} payload 
  * @returns
- * @example
  */
 function Createvendor(payload) {
   milkvendor=new Vendor(payload)
   ActyvPro.push(milkvendor)
-  return "addedcustomer"
+  return ActyvPro.length
 }
 
 
