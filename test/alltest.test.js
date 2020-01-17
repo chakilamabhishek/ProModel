@@ -2,7 +2,7 @@ const { registerVendor } = require("../methods/vendormethods");
 const { addingProductToInventory } = require("../methods/productmethods");
 const { addBusinessType } = require("../methods/businessmethods");
 const { ActyvPro } =require("../model/vendormodel");
-const {newpayload}=require("../sampedata");
+const { newpayload }=require("../sampedata");
 
 const should = require("chai").should();
 before(done => {
