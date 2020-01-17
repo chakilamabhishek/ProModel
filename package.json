@@ -4,7 +4,7 @@
   "description": "",
   "main": "test.js",
   "scripts": {
-    "test": "mocha --timeout 10000",
+    "test": "mocha --timeout 10000 --colors --reporter mocha-simple-html-reporter --reporter-options output=report.html",
     "doc": "jsdoc -c ./.jsdoc.conf.json"
   },
   "repository": {
@@ -22,6 +22,7 @@
     "chai": "^4.2.0",
     "jsdoc": "^3.6.3",
     "mocha": "^7.0.0",
+    "mocha-simple-html-reporter": "^1.1.0",
     "sinon": "^8.1.0"
   }
 }
