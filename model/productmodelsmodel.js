@@ -20,10 +20,10 @@ class ProductModels {
     // this.description = payload.description
     // this.expiry = payload.expiry
     // this.discountType = payload.discountType
-    this.gst = payload.gst;
-    this.gstAmount = payload.gstAmount;
-    this.subTotal = payload.subTotal;
-    this.discount = payload.discount;
+    // this.gst = payload.gst;
+    // this.gstAmount = payload.gstAmount;
+    // this.subTotal = payload.subTotal;
+    // this.discount = payload.discount;
   }
 }
 
