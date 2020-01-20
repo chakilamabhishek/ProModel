@@ -1,5 +1,5 @@
 const should = require("chai").should();
-const { addBusiness } = require("../controllers/business");
+const { createBusinessForVendor } = require("../controllers/business");
 const { newPayload } = require("./sampedata");
 const { registerVendor } = require("../controllers/vendor");
 
@@ -26,15 +26,15 @@ before(done => {
  */
 describe("Creating a Business", function() {
   it("should create a instance of Business. returns change in size of no of businesses.", function(done) {
-    const businessInfo = {
+    const businessPayload = {
       phone: "+919876543210",
-      business: {
+      businessInfo: {
         businessName: "Newspaper",
         businessID: "News32",
         inventory: []
       }
     };
-    noOfBusinessesAdded = addBusiness(businessInfo);
+    noOfBusinessesAdded = createBusinessForVendor(businessPayload);
     noOfBusinessesAdded[0].should.be.a("number");
     noOfBusinessesAdded[0].should.equal(1);
     done();

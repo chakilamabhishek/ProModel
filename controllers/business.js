@@ -11,13 +11,13 @@ const { Business } = require('../models/business')
  * @param {object} payload containes User's Phone Number, Business details to be added
  * @returns {number} Changed Size of User's Business
  */
-module.exports.addBusiness = payload =>  {
-  let { phone, business } = payload
-  newBusiness = new Business(business);
+module.exports.createBusinessForVendor = payload =>  {
+  let { phone, businessInfo } = payload
+  business = new Business(businessInfo);
   return ActyvPro.map((user) => {
      if(user.phone === phone ){
       let oldBusinessSize = user.business.length
-      user.business.push(newBusiness)
+      user.business.push(business)
       return user.business.length - oldBusinessSize
      }
   })

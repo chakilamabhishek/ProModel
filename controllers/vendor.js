@@ -2,7 +2,7 @@
  * @module vendor-controllers
  */
 const { Vendor } = require("../models/vendor");
-
+const {saveVendor}=require("./service/APIs")
 /**
  * @function
  * @name registerVendor
@@ -12,8 +12,6 @@ const { Vendor } = require("../models/vendor");
  */
 
 module.exports.registerVendor = payload  => {
-  newVendor = new Vendor(payload);
-  let numberOfVendors = ActyvPro.length;
-  ActyvPro.push(newVendor);
-  return ActyvPro.length - numberOfVendors;
+  vendor = new Vendor(payload);
+  return saveVendor(vendor);
 }

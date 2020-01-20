@@ -90,7 +90,7 @@ describe("Invoice ", function() {
     done();
   });
 
-  it("it should calculate the invoice amount even he is not Subscribed for weekends and on vaction on weekends", function(done) {
+  it("it should calculate the invoice amount", function(done) {
     let invoicePayload = {
       subscriptionInfo: {
         subscriptionID: "10001",
