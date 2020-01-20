@@ -2,7 +2,7 @@
  * @module business-controllers
  */
 const { Business } = require('../models/business')
-const {updatingBusinessesOfVendor}=require("./service/APIs")
+const {savingBusinessesOfVendor}=require("./service/APIs")
 
 /**
  * @function
@@ -14,5 +14,5 @@ const {updatingBusinessesOfVendor}=require("./service/APIs")
 module.exports.createBusinessForVendor = payload =>  {
   let { phone, businessInfo } = payload
   business = new Business(businessInfo);
-  return updatingBusinessesOfVendor(business,phone)
+  return savingBusinessesOfVendor(business,phone)
 }

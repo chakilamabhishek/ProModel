@@ -3,7 +3,7 @@
  */
 const { Customer } = require("../models/customer")
 const { ActyvPro } = require("../data/sampleDatabase");
-const { updatingCustomerOfVendor }=require("./service/APIs")
+const { savingCustomerOfVendor }=require("./service/APIs")
 /**
  * @function
  * @name addCustomer
@@ -14,6 +14,6 @@ const { updatingCustomerOfVendor }=require("./service/APIs")
 module.exports.addingCustomerToVendor = payload => {
   let { phone, customerInfo } = payload
   customer = new Customer(customerInfo);
-  return updatingCustomerOfVendor(customer,phone);
+  return savingCustomerOfVendor(customer,phone);
 }
 

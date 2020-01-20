@@ -2,7 +2,7 @@
  * @module subscription-controllers
  */
 const { Subscription } = require("../models/subscription")
-const {updatingSubscriptionInfoOfCustomer} =require('./service/APIs')
+const {savingSubscriptionInfoOfCustomer} =require('./service/APIs')
 
 /**
  * @function
@@ -14,6 +14,6 @@ const {updatingSubscriptionInfoOfCustomer} =require('./service/APIs')
 module.exports.addingSubscriptionToVendor = payload => {
     let {phone, customerName, subscriptionInfo} = payload
     subscription = new Subscription(subscriptionInfo);
-    return updatingSubscriptionInfoOfCustomer(subscription,phone, customerName)
+    return savingSubscriptionInfoOfCustomer(subscription,phone, customerName)
   };
   

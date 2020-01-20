@@ -4,7 +4,7 @@
 
 const { Product } = require("../models/product");
 const { ProductModel } = require("../models/product-model");
-const {updatingInventoryOfVendor,updatingProductOfVendor}=require("../controllers/service/APIs")
+const {savingInventoryOfVendor,savingProductOfVendor}=require("../controllers/service/APIs")
 
 /**
  * @function
@@ -16,7 +16,7 @@ const {updatingInventoryOfVendor,updatingProductOfVendor}=require("../controller
 module.exports.addingProductToInventory = payload => {
   let { phone, businessName, productInfo } = payload;
   product = new Product(productInfo);
-  return updatingInventoryOfVendor(product,phone,businessName)
+  return savingInventoryOfVendor(product,phone,businessName)
 };
 
 /**
@@ -29,5 +29,5 @@ module.exports.addingProductToInventory = payload => {
 module.exports.addingProductModelToProduct = payload => {
   let { phone, businessName, productName, productModelInfo } = payload;
   productModel = new ProductModel(productModelInfo);
-  return updatingProductOfVendor(productModel,phone, businessName, productName)
+  return savingProductOfVendor(productModel,phone, businessName, productName)
 };

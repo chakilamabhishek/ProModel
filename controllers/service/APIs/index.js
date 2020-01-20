@@ -13,7 +13,7 @@ function saveVendor(vendor){
 }
 
 
-function updatingBusinessesOfVendor(business,phone){
+function savingBusinessesOfVendor(business,phone){
   return ActyvPro.map((vendor) => {
     if(vendor.phone === phone ){
      let oldBusinessSize = vendor.business.length
@@ -24,7 +24,7 @@ function updatingBusinessesOfVendor(business,phone){
 }
 
 
-function updatingCustomerOfVendor(customer,phone){
+function savingCustomerOfVendor(customer,phone){
   return ActyvPro.map((vendor) => {
     if(vendor.phone === phone ){
      let oldContactsSize = vendor.contacts.length
@@ -34,7 +34,7 @@ function updatingCustomerOfVendor(customer,phone){
  })
 }
 
-function updatingInventoryOfVendor(product,phone,businessName){
+function savingInventoryOfVendor(product,phone,businessName){
   return ActyvPro.map(vendor => {
     if (vendor.phone === phone)
       if (
@@ -50,7 +50,7 @@ function updatingInventoryOfVendor(product,phone,businessName){
 }
 
 
-function updatingProductOfVendor(productModel,phone, businessName, productName){
+function savingProductOfVendor(productModel,phone, businessName, productName){
   return ActyvPro.map(vendor => {
     if (vendor.phone === phone)
       if (
@@ -73,7 +73,7 @@ function updatingProductOfVendor(productModel,phone, businessName, productName){
   });
 }
 
-function  updatingSubscriptionInfoOfCustomer(subscription,phone, customerName){
+function  savingSubscriptionInfoOfCustomer(subscription,phone, customerName){
   return ActyvPro.map(vendor => {
     if (vendor.phone === phone)
     { 
@@ -87,8 +87,8 @@ function  updatingSubscriptionInfoOfCustomer(subscription,phone, customerName){
 }
 
 module.exports.saveVendor=saveVendor
-module.exports.updatingBusinessesOfVendor=updatingBusinessesOfVendor
-module.exports.updatingCustomerOfVendor=updatingCustomerOfVendor
-module.exports.updatingInventoryOfVendor=updatingInventoryOfVendor
-module.exports.updatingProductOfVendor=updatingProductOfVendor
-module.exports.updatingSubscriptionInfoOfCustomer=updatingSubscriptionInfoOfCustomer
+module.exports.savingBusinessesOfVendor=savingBusinessesOfVendor
+module.exports.savingCustomerOfVendor=savingCustomerOfVendor
+module.exports.savingInventoryOfVendor=savingInventoryOfVendor
+module.exports.savingProductOfVendor=savingProductOfVendor
+module.exports.savingSubscriptionInfoOfCustomer=savingSubscriptionInfoOfCustomer
