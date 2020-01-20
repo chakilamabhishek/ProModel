@@ -22,7 +22,7 @@ getPrice = ( day, productInfo ) => {
  * @param {object} index Check Date for vacation
  * @returns {boolean} True or false for vacation Status
  */
-checkOnVacation = (subscriptionInfo, index) => {
+checkOnHolddates = (subscriptionInfo, index) => {
   return !!subscriptionInfo.holdDate.find(date => {
     date = new Date(date);
     return date.getTime() === index.getTime();
@@ -42,7 +42,7 @@ module.exports.calculateInvoice = payload => {
   let startDate = new Date(subscriptionInfo.subscriptionFrom);
   let endDate = new Date(subscriptionInfo.subscriptionTo);
   for ( startDate; startDate <= endDate; ) {
-    if (!checkOnVacation(subscriptionInfo, startDate)) {
+    if (!checkOnHolddates(subscriptionInfo, startDate)) {
         amount = +amount + +getPrice(startDate.getDay(), productInfo);
     }
     startDate.setDate(startDate.getDate() + 1);
