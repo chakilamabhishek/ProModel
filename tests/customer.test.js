@@ -1,5 +1,5 @@
 const should = require("chai").should();
-const { addCustomer } = require("../controllers/customer");
+const { addingCustomerToVendor } = require("../controllers/customer");
 
 /**
  * @function
@@ -10,15 +10,16 @@ const { addCustomer } = require("../controllers/customer");
 describe("Contact ", function() {
   it("should create a instance of Product. returns change in size of Inventory of Vendor", function(done) {
     let customerPayload = {
-      customer: {
-        customerID: "1023",
+      customerInfo: {
         customerName: "Acabhishek",
         customerAddress: "Hyderabad",
         subscriptions: []
       },
       phone: "+919876543210"
     };
-    noOfCustomersAdded = addCustomer(customerPayload);
+    noOfCustomersAdded = addingCustomerToVendor(customerPayload).filter(
+      Boolean
+    );
     noOfCustomersAdded[0].should.be.a("number");
     noOfCustomersAdded[0].should.equal(1);
     done();

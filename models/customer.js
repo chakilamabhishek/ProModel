@@ -10,7 +10,7 @@ class Customer {
       /**
        * @type {number}
        */
-      this.customerID = payload.customerID;
+      this.customerID = Math.floor(Math.random() * Math.floor(100)); //only for testing
       /**
        * @type {string}
        */

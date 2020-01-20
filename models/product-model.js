@@ -7,6 +7,10 @@ class ProductModel {
      * @param {object} payload Object containing Initial values
      */
     constructor(payload) {
+      /**
+       * @type {number}
+       */
+      this.productModelID = Math.floor(Math.random() * Math.floor(100)); //only for testing
        /**
        * @type {string}
        */

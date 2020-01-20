@@ -1,5 +1,4 @@
 const should = require("chai").should();
-const { newPayload } = require("./sampedata");
 const { addingProductModelToProduct } = require("../controllers/product");
 
 /**
@@ -14,7 +13,7 @@ describe("Adding productModel to Product of Vendor's Inventory", function() {
       phone: "+918897626060",
       businessName: "Newspaper",
       productName: "Hindu",
-      productModel: {
+      productModelInfo: {
         productModelName: "Sunday",
         productModelPrice: "8",
         productModelGST: "",

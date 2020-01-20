@@ -10,7 +10,7 @@ class Subscription {
        /**
        * @type {number}
        */
-      this.subscriptionID = payload.subscriptionID;
+      this.subscriptionID = Math.floor(Math.random() * Math.floor(100)); //only for testing
        /**
        * @type {Date}
        */

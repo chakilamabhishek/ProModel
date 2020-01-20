@@ -1,16 +1,22 @@
 /**
  * Class representing Product
  */
-class Product {
+module.exports.Units = {
+  UNITS : "UNITS",
+  LITERS: "LITERS",
+  KILOGRAMS:"KILOGRAMS",
+  DOZEN:"DOZEN"
+}
+ class Product {
     /**
      * Creates a Product.
      * @param {object} payload Object containing Initial values
      */
     constructor(payload) {
-      /**
+     /**
        * @type {number}
        */
-      this.productID = payload.productID;
+      this.productID = Math.floor(Math.random() * Math.floor(100)); //only for testing
       /**
        * @type {string}
        */
@@ -22,7 +28,7 @@ class Product {
       /**
        * @type {string}
        */
-      this.units = payload.units;
+      this.units = payload.units?payload.units:Units.UNITS;
       /**
        * @type {Array}
        */

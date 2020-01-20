@@ -9,13 +9,13 @@ class Business {
      */
     constructor(payload) {
       /**
+       * @type {number}
+       */
+      this.businessID = Math.floor(Math.random() * Math.floor(100)); //only for testing
+      /**
        * @type {string}
        */
       this.businessName = payload.businessName;
-      /**
-       * @type {number}
-       */
-      this.businessID = payload.businessID;
       /**
        * @type {Array}
        */

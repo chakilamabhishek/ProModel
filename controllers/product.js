@@ -4,7 +4,7 @@
 
 const { Product } = require("../models/product");
 const { ProductModel } = require("../models/product-model");
-const { ActyvPro } = require("../models/vendor");
+const {updatingInventoryOfVendor,updatingProductOfVendor}=require("../controllers/service/APIs")
 
 /**
  * @function
@@ -14,20 +14,9 @@ const { ActyvPro } = require("../models/vendor");
  * @returns {number} Change in  Size of Inventory
  */
 module.exports.addingProductToInventory = payload => {
-  let { phone, businessName, product } = payload;
-  newProduct = new Product(product);
-  return ActyvPro.map(user => {
-    if (user.phone === phone)
-      if (
-        (j = user.business.findIndex(
-          requiredBusiness => requiredBusiness.businessName === businessName
-        )) !== undefined
-      ) {
-        let oldInventorySize = user.business[j].inventory.length;
-        user.business[j].inventory.push(newProduct);
-        return user.business[j].inventory.length - oldInventorySize;
-      }
-  });
+  let { phone, businessName, productInfo } = payload;
+  product = new Product(productInfo);
+  return updatingInventoryOfVendor(product,phone,businessName)
 };
 
 /**
@@ -38,26 +27,7 @@ module.exports.addingProductToInventory = payload => {
  * @returns {number} Changed Size of ProductModel's
  */
 module.exports.addingProductModelToProduct = payload => {
-  let { phone, businessName, productName, productModel } = payload;
-  newProductModel = new ProductModel(productModel);
-  return ActyvPro.map(user => {
-    if (user.phone === phone)
-      if (
-        (j = user.business.findIndex(
-          requiredBusiness => requiredBusiness.businessName === businessName
-        )) >= 0
-      )
-        if (
-          (k = user.business[j].inventory.findIndex(
-            existingProduct => existingProduct.productName === productName
-          )) >= 0
-        ) {
-          let oldProductModelSize =
-            user.business[j].inventory[k].productModels.length;
-          user.business[j].inventory[k].productModels.push(newProductModel);
-          return (
-            user.business[j].inventory[k].productModels.length - oldProductModelSize
-          );
-        }
-  });
+  let { phone, businessName, productName, productModelInfo } = payload;
+  productModel = new ProductModel(productModelInfo);
+  return updatingProductOfVendor(productModel,phone, businessName, productName)
 };

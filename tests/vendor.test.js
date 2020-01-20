@@ -1,5 +1,5 @@
 const should = require("chai").should();
-const { newPayload } = require("./sampedata");
+const { newPayload } = require("./sampleData");
 const { registerVendor } = require("../controllers/vendor");
 
 /**

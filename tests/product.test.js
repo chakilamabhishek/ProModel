@@ -1,5 +1,5 @@
 const should = require("chai").should();
-const { newPayload } = require("./sampedata");
+const { newPayload } = require("./sampleData");
 const { addingProductToInventory } = require("../controllers/product");
 
 /**
@@ -13,7 +13,7 @@ describe("Adding product to Inventory of Vendor", function() {
     let productPayload = {
       phone: "+919876543210",
       businessName: "Newspaper",
-      product: {
+      productInfo: {
         productID: "101",
         productName: "Hindu",
         description: "This is Hindu Paper",
@@ -21,7 +21,9 @@ describe("Adding product to Inventory of Vendor", function() {
         productModels: []
       }
     };
-    noOfProductsAdded = addingProductToInventory(productPayload);
+    noOfProductsAdded = addingProductToInventory(productPayload).filter(
+      Boolean
+    );
     noOfProductsAdded[0].should.be.a("number");
     noOfProductsAdded[0].should.equal(1);
     done();
