@@ -1,28 +1,23 @@
 {
-  "name": "ACTYVMODEL",
+  "name": "ActyvPro",
   "version": "1.0.0",
-  "description": "",
+  "private": true,
   "main": "test.js",
   "scripts": {
-    "test": "mocha --timeout 10000 --colors --reporter mocha-simple-html-reporter --reporter-options output=report.html",
+    "start": "node ./bin/www",
+    "test": "mocha 'tests/**/*.js' --recursive --timeout 10000",
     "doc": "jsdoc -c ./.jsdoc.conf.json"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://abhishekactyv@github.com/chakilamabhishek/ProModel.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/chakilamabhishek/ProModel/issues"
-  },
-  "homepage": "https://github.com/chakilamabhishek/ProModel#readme",
   "dependencies": {
     "chai": "^4.2.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
     "jsdoc": "^3.6.3",
     "mocha": "^7.0.0",
-    "mocha-simple-html-reporter": "^1.1.0",
+    "morgan": "~1.9.1",
     "sinon": "^8.1.0"
   }
 }
