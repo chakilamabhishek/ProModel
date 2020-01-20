@@ -1,4 +1,4 @@
-const { ActyvPro } = require('../../../data/sampleDatabase');
+const { ActyvPro } = require('../../data/sampleDatabase');
 
 /**
  *

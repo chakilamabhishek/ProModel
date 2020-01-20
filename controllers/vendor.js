@@ -2,7 +2,7 @@
  * @module vendor-controllers
  */
 const { Vendor } = require("../models/vendor");
-const {savingVendor}=require("./service/utils")
+const {savingVendor}=require("../service/utils")
 
 
 /**

@@ -2,7 +2,7 @@
  * @module subscription-controllers
  */
 const { Subscription } = require("../models/subscription")
-const {savingSubscriptionInfoOfCustomer} =require('./service/utils')
+const {savingSubscriptionInfoOfCustomer} =require('../service/utils')
 
 /**
  * @function

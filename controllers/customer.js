@@ -3,7 +3,7 @@
  */
 const { Customer } = require("../models/customer")
 const { ActyvPro } = require("../data/sampleDatabase");
-const { savingCustomerOfVendor }=require("./service/utils")
+const { savingCustomerOfVendor }=require("../service/utils")
 /**
  * @function
  * @name addCustomer

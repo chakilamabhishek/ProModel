@@ -2,7 +2,7 @@
  * @module business-controllers
  */
 const { Business } = require('../models/business')
-const {savingBusinessesOfVendor}=require("./service/utils")
+const {savingBusinessesOfVendor}=require("../service/utils")
 
 /**
  * @function
