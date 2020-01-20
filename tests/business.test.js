@@ -4,7 +4,7 @@ const { newPayload } = require("./sampedata");
 const { registerVendor } = require("../controllers/vendor");
 
 before(done => {
-  const payload = {
+  const sampleVendor = {
     firstName: "Abhishek",
     lastName: "ch",
     email: "abhishekch65@gmail.com",
@@ -13,7 +13,7 @@ before(done => {
     invoices: [],
     business: []
   };
-  registerVendor(payload);
+  registerVendor(sampleVendor);
   registerVendor(newPayload);
   done();
 });
