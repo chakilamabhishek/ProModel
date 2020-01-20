@@ -2,7 +2,7 @@
  * @module vendor-controllers
  */
 const { Vendor } = require("../models/vendor");
-const {saveVendor}=require("./service/APIs")
+const {savingVendor}=require("./service/utils")
 
 
 /**
@@ -15,5 +15,5 @@ const {saveVendor}=require("./service/APIs")
 
 module.exports.registerVendor = payload  => {
   vendor = new Vendor(payload);
-  return saveVendor(vendor);
+  return savingVendor(vendor);
 }

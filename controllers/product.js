@@ -4,7 +4,7 @@
 
 const { Product } = require("../models/product");
 const { ProductModel } = require("../models/product-model");
-const {savingInventoryOfVendor,savingProductOfVendor}=require("../controllers/service/APIs")
+const {savingInventoryOfVendor,savingProductOfVendor}=require("../controllers/service/utils")
 
 /**
  * @function

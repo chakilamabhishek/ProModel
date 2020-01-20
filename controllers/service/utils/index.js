@@ -6,7 +6,7 @@ const { ActyvPro } = require('../../../data/sampleDatabase');
  * @param {*} vendor
  * @returns
  */
-function saveVendor(vendor){
+function savingVendor(vendor){
   let numberOfVendors = ActyvPro.length;
   ActyvPro.push(vendor);
   return ActyvPro.length-numberOfVendors
@@ -86,7 +86,7 @@ function  savingSubscriptionInfoOfCustomer(subscription,phone, customerName){
   });
 }
 
-module.exports.saveVendor=saveVendor
+module.exports.savingVendor=savingVendor
 module.exports.savingBusinessesOfVendor=savingBusinessesOfVendor
 module.exports.savingCustomerOfVendor=savingCustomerOfVendor
 module.exports.savingInventoryOfVendor=savingInventoryOfVendor
