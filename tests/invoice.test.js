@@ -1,6 +1,6 @@
 const { calculateInvoice } = require("../controllers/invoice");
 const should = require("chai").should();
-const { newPayload } = require("./sampedata");
+const { newPayload } = require("./sampleData");
 
 /**
  * @function

@@ -1,6 +1,5 @@
 const should = require("chai").should();
 const { addBusiness } = require("../controllers/business");
-const { newPayload } = require("./sampedata");
 const { registerVendor } = require("../controllers/vendor");
 
 before(done => {
@@ -14,7 +13,6 @@ before(done => {
     business: []
   };
   registerVendor(sampleVendor);
-  registerVendor(newPayload);
   done();
 });
 
@@ -30,11 +28,12 @@ describe("Creating a Business", function() {
       phone: "+919876543210",
       business: {
         businessName: "Newspaper",
-        businessID: "News32",
         inventory: []
       }
     };
-    noOfBusinessesAdded = addBusiness(businessInfo);
+    noOfBusinessesAdded = addBusiness(businessInfo).filter(
+      Boolean
+    );
     noOfBusinessesAdded[0].should.be.a("number");
     noOfBusinessesAdded[0].should.equal(1);
     done();

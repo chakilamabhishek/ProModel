@@ -1,7 +1,7 @@
 /**
  * @module business-controllers
  */
-const { ActyvPro } = require("../models/vendor");
+const { ActyvPro } = require("../data/sampleDatabase");
 const { Business } = require('../models/business')
 
 /**

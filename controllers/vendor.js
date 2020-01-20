@@ -2,6 +2,7 @@
  * @module vendor-controllers
  */
 const { Vendor } = require("../models/vendor");
+const { ActyvPro } = require("../data/sampleDatabase");
 
 /**
  * @function

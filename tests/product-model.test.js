@@ -1,5 +1,4 @@
 const should = require("chai").should();
-const { newPayload } = require("./sampedata");
 const { addingProductModelToProduct } = require("../controllers/product");
 
 /**

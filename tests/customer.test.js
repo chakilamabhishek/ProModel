@@ -11,14 +11,15 @@ describe("Contact ", function() {
   it("should create a instance of Product. returns change in size of Inventory of Vendor", function(done) {
     let customerPayload = {
       customer: {
-        customerID: "1023",
         customerName: "Acabhishek",
         customerAddress: "Hyderabad",
         subscriptions: []
       },
       phone: "+919876543210"
     };
-    noOfCustomersAdded = addCustomer(customerPayload);
+    noOfCustomersAdded = addCustomer(customerPayload).filter(
+      Boolean
+    );
     noOfCustomersAdded[0].should.be.a("number");
     noOfCustomersAdded[0].should.equal(1);
     done();

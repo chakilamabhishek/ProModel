@@ -2,7 +2,7 @@
  * @module customer-controllers
  */
 const { Customer } = require("../models/customer")
-const { ActyvPro } = require("../models/vendor")
+const { ActyvPro } = require("../data/sampleDatabase");
 
 /**
  * @function

@@ -1,5 +1,5 @@
 const should = require("chai").should();
-const { newPayload } = require("./sampedata");
+const { newPayload } = require("./sampleData");
 const { addSubscription } = require("../controllers/subscription");
 /**
  * @function
@@ -21,7 +21,9 @@ describe("Subscription ", function() {
       customerName: "Acabhishek",
       phone: "+919876543210"
     };
-    noOfSubscriptonsAdded = addSubscription(subscriptionPayload);
+    noOfSubscriptonsAdded = addSubscription(subscriptionPayload).filter(
+      Boolean
+    );
     noOfSubscriptonsAdded[0].should.be.a("number");
     noOfSubscriptonsAdded[0].should.equal(1);
     done();

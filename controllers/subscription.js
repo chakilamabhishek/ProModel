@@ -2,6 +2,7 @@
  * @module subscription-controllers
  */
 const { Subscription } = require("../models/subscription")
+const { ActyvPro } = require("../data/sampleDatabase")
 
 /**
  * @function

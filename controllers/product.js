@@ -4,7 +4,7 @@
 
 const { Product } = require("../models/product");
 const { ProductModel } = require("../models/product-model");
-const { ActyvPro } = require("../models/vendor");
+const { ActyvPro } = require("../data/sampleDatabase");
 
 /**
  * @function

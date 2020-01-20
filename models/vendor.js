@@ -8,6 +8,10 @@ class Vendor {
      */
     constructor(payload) {
       /**
+       * @type {number}
+       */
+      this.vendorID = Math.floor(Math.random() * Math.floor(100)); //only for testing
+      /**
        * @type {string}
        */
       this.firstName = payload.firstName;
@@ -38,8 +42,6 @@ class Vendor {
     }
   }
   
-  ActyvPro = [];
 
-  module.exports.ActyvPro = ActyvPro;
   module.exports.Vendor = Vendor;
   
